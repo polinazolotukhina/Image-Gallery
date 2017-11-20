@@ -6,10 +6,13 @@
 # SImple-to-do
 
 
-**Clone the project**. git clone https://github.com/polinazolotukhina/SImple-to-do.git
+**Clone the project**. git clone https://github.com/polinazolotukhina/Image-Gallery.git
 
-**Go to the folder **. cd SImple-to-do
+**Go to the folder **. 
 
+```
+cd Image-Gallery
+```
 **Install **. npm install
 
 **Run **. npm start -s
