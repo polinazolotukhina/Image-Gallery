@@ -9,7 +9,6 @@ import Gallery from 'react-grid-gallery';
 
 
 class Home extends Component {
-
     render() {
         const { uploadedFiles } = this.props;
         return (
