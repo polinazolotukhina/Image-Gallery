@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { compose, bindActionCreators } from 'redux';
+import { compose } from 'redux';
 import { firebaseConnect, dataToJS, getFirebase } from 'react-redux-firebase';
 import { map } from 'lodash';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -31,7 +31,7 @@ class Uploader extends Component {
   render() {
     const { uploadedFiles } = this.props
     return (
-      <div className="container" style={{ padding: '50px 0' }}>
+      <div style={{ padding: '50px 0' }}>
         <div className="row">
             <div className="col-md-6">
                 <h2> Add/Delete Files</h2>
@@ -46,11 +46,14 @@ class Uploader extends Component {
         </div>
         {
           uploadedFiles &&
-            <div className="row" style={{ margin: '30px 0' }}>
+            <div className="row" style={{ marginTop: '30px', marginBottom: '30px' }}>
               {
                 map(uploadedFiles, (file, key) => (
-                  <div className="col-md-2" key={file.name + key} style={{ margin:'10px 0'}}>
-                    <img style={{ width: '100%', height: '90px' }} src={file.src} />
+                  <div className="col-md-2" key={file.name + key} style={{ margin: '10px 0' }} >
+                    <img
+                        style={{ width: '100%', height: '90px', marginBottom: '10px' }}
+                        src={file.src}
+                    />
                     <button onClick={() => this.onFileDelete(file, key)}>
                       Delete File
                     </button>
@@ -61,7 +64,7 @@ class Uploader extends Component {
           }
           <Dropzone onDrop={this.onFilesDrop}>
             <div>
-                <h4 style={{ padding:'10px'}}>
+                <h4 style={{ padding: '10px' }}>
                   To Add files just drag and drop them here
                   or click to select
                 </h4>

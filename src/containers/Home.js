@@ -12,27 +12,28 @@ class Home extends Component {
     render() {
         const { uploadedFiles } = this.props;
         return (
-            <div>
-            <div className="col-md-6">
-                <h2 style={{ margin: '30px' }}>Photo Gallery</h2>
-            </div>
-            <div className="col-md-6">
-                <RaisedButton
-                    label="Add or Delete Images"
-                    style={{ margin: '30px', float: 'right' }}
-                    onClick={() => { browserHistory.push('/modify_gallery'); }}
-                />
-            </div>
+            <div style={{ padding: '50px 0' }}>
+                <div className="row">
+                    <div className="col-md-6">
+                        <h2>Photo Gallery</h2>
+                    </div>
+                    <div className="col-md-6">
+                        <RaisedButton
+                            label="Add or Delete Images"
+                            style={{ float: 'right' }}
+                            onClick={() => { browserHistory.push('/modify_gallery'); }}
+                        />
+                    </div>
+                </div>
             {
                 (uploadedFiles)?(
-                <div>
+                <div style={{ margin: '30px 0' }}>
                     {uploadedFiles &&
                         <Gallery images={Object.values(uploadedFiles)} />
                     }
                 </div>
-            ):(<h1 className="text-center">Gallery is empty</h1>)
+                ):(<h1 className="text-center">Gallery is empty</h1>)
             }
-
             </div>
         );
     }
