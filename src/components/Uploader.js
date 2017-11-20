@@ -31,10 +31,10 @@ class Uploader extends Component {
   render() {
     const { uploadedFiles } = this.props
     return (
-      <div className="container" style={{ padding: '50px 0'}}>
+      <div className="container" style={{ padding: '50px 0' }}>
         <div className="row">
             <div className="col-md-6">
-                <h2> Add Files</h2>
+                <h2> Add/Delete Files</h2>
             </div>
             <div className="col-md-6">
                   <RaisedButton
@@ -44,19 +44,13 @@ class Uploader extends Component {
                   />
             </div>
         </div>
-        <Dropzone onDrop={this.onFilesDrop}>
-          <div>
-            Drag and drop files here
-            or click to select
-          </div>
-        </Dropzone>
         {
           uploadedFiles &&
-            <div className="row" style={{ marginTop: '30px' }}>
+            <div className="row" style={{ margin: '30px 0' }}>
               {
                 map(uploadedFiles, (file, key) => (
-                  <div className="col-md-2" key={file.name + key}>
-                    <img style={{ width: '100%', height: '90px'}} src={file.src} />
+                  <div className="col-md-2" key={file.name + key} style={{ margin:'10px 0'}}>
+                    <img style={{ width: '100%', height: '90px' }} src={file.src} />
                     <button onClick={() => this.onFileDelete(file, key)}>
                       Delete File
                     </button>
@@ -65,6 +59,14 @@ class Uploader extends Component {
               }
             </div>
           }
+          <Dropzone onDrop={this.onFilesDrop}>
+            <div>
+                <h4 style={{ padding:'10px'}}>
+                  To Add files just drag and drop them here
+                  or click to select
+                </h4>
+            </div>
+          </Dropzone>
       </div>
     );
   }

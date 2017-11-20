@@ -2,16 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import { browserHistory } from 'react-router';
-import CircularProgress from 'material-ui/CircularProgress';
 import { compose } from 'redux';
-import {
-   firebaseConnect,
-   isLoaded,
-   pathToJS,
-   dataToJS,
-   isEmpty,
-   getFirebase
- } from 'react-redux-firebase';
+import { firebaseConnect, dataToJS } from 'react-redux-firebase';
  import PropTypes from 'prop-types';
  import Gallery from 'react-grid-gallery';
 
@@ -32,9 +24,16 @@ class Home extends Component {
                     onClick={() => { browserHistory.push('/modify_gallery'); }}
                 />
             </div>
-            {uploadedFiles &&
-                <Gallery images={Object.values(uploadedFiles)} />
+            {
+                (uploadedFiles)?(
+                <div>
+                    {uploadedFiles &&
+                        <Gallery images={Object.values(uploadedFiles)} />
+                    }
+                </div>
+            ):(<h1 className="text-center">Gallery is empty</h1>)
             }
+
             </div>
         );
     }
