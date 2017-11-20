@@ -29,5 +29,9 @@ npm install
 npm start -s
 
 ```
+![Alt text](https://github.com/polinazolotukhina/Image-Gallery/blob/master/Screen%20Shot%202017-11-20%20at%203.12.42%20PM.png?raw=true)
+
+
+
 
 ![Alt text](https://github.com/polinazolotukhina/Image-Gallery/blob/master/Screen%20Shot%202017-11-20%20at%203.12.30%20PM.png?raw=true)
