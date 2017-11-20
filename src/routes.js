@@ -10,7 +10,7 @@ export default (
     <Router history={browserHistory}>
         <Route path="/" component={App}>experiments
             <IndexRoute component={Home} ignoreScrollBehavior />
-            <Route path="/upload_image" component={UploadForm} ignoreScrollBehavior />
+            <Route path="/modify_gallery" component={UploadForm} ignoreScrollBehavior />
             <Route path="*" component={NotFoundPage} ignoreScrollBehavior />
         </Route>
     </Router>

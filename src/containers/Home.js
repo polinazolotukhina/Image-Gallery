@@ -13,7 +13,6 @@ import {
    getFirebase
  } from 'react-redux-firebase';
  import PropTypes from 'prop-types';
- import UploadItem from '../components/UploadItem';
  import Gallery from 'react-grid-gallery';
 
 
@@ -22,9 +21,19 @@ class Home extends Component {
     render() {
         const { uploadedFiles } = this.props;
         return (
-            <div className="container">
+            <div>
+            <div className="col-md-6">
+                <h2 style={{ margin: '30px' }}>Photo Gallery</h2>
+            </div>
+            <div className="col-md-6">
+                <RaisedButton
+                    label="Add or Delete Images"
+                    style={{ margin: '30px', float: 'right' }}
+                    onClick={() => { browserHistory.push('/modify_gallery'); }}
+                />
+            </div>
             {uploadedFiles &&
-                <Gallery images={ Object.values(uploadedFiles)} />
+                <Gallery images={Object.values(uploadedFiles)} />
             }
             </div>
         );

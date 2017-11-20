@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { compose, bindActionCreators } from 'redux';
 import { firebaseConnect, dataToJS, getFirebase } from 'react-redux-firebase';
 import { map } from 'lodash';
+import RaisedButton from 'material-ui/RaisedButton';
+import { browserHistory } from 'react-router';
 import Dropzone from 'react-dropzone';
 
 
@@ -29,7 +31,19 @@ class Uploader extends Component {
   render() {
     const { uploadedFiles } = this.props
     return (
-      <div>
+      <div className="container" style={{ padding: '50px 0'}}>
+        <div className="row">
+            <div className="col-md-6">
+                <h2> Add Files</h2>
+            </div>
+            <div className="col-md-6">
+                  <RaisedButton
+                      label="Homepage"
+                      style={{ float: 'right' }}
+                      onClick={() => { browserHistory.push('/'); }}
+                  />
+            </div>
+        </div>
         <Dropzone onDrop={this.onFilesDrop}>
           <div>
             Drag and drop files here
@@ -38,14 +52,11 @@ class Uploader extends Component {
         </Dropzone>
         {
           uploadedFiles &&
-            <div>
-              <h3>
-                Uploaded file(s):
-              </h3>
+            <div className="row" style={{ marginTop: '30px' }}>
               {
                 map(uploadedFiles, (file, key) => (
-                  <div key={file.name + key}>
-                    <img style={{ width: '80px'}} src={file.src} />
+                  <div className="col-md-2" key={file.name + key}>
+                    <img style={{ width: '100%', height: '90px'}} src={file.src} />
                     <button onClick={() => this.onFileDelete(file, key)}>
                       Delete File
                     </button>

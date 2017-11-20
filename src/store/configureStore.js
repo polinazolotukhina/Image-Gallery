@@ -14,12 +14,12 @@ const fbConfig = {
     projectId: "image-galery",
     storageBucket: "image-galery.appspot.com",
     messagingSenderId: "69706574187"
-}
+};
 
 const config = {
   fileMetadataFactory: (uploadRes) => {
     // upload response from Firebase's storage upload
-    const { metadata: { name, fullPath, downloadURLs } } = uploadRes
+    const { metadata: { name, fullPath, downloadURLs } } = uploadRes;
     // default factory includes name, fullPath, downloadURL
     return {
       name,
@@ -28,9 +28,9 @@ const config = {
       src: downloadURLs[0],
       thumbnailWidth: 320,
       thumbnailHeight: 174,
-    }
+    };
   }
-}
+};
 
 function configureStoreProd(initialState) {
     const middlewares = [
