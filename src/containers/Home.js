@@ -4,8 +4,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { browserHistory } from 'react-router';
 import { compose } from 'redux';
 import { firebaseConnect, dataToJS } from 'react-redux-firebase';
- import PropTypes from 'prop-types';
- import Gallery from 'react-grid-gallery';
+import PropTypes from 'prop-types';
+import Gallery from 'react-grid-gallery';
 
 
 class Home extends Component {
