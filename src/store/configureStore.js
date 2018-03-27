@@ -8,12 +8,8 @@ import { loadingBarMiddleware  } from 'react-redux-loading-bar';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 
 const fbConfig = {
-    apiKey: "AIzaSyAVriwqcQmjH4UK5BTTNBsa-3FgcLrQgL4",
-    authDomain: "image-galery.firebaseapp.com",
-    databaseURL: "https://image-galery.firebaseio.com",
-    projectId: "image-galery",
-    storageBucket: "image-galery.appspot.com",
-    messagingSenderId: "69706574187"
+     //......PLEASE ADD KEYS...
+
 };
 
 const config = {
